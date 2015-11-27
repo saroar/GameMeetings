@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: game_events_development
+  pool: 5
+  username: alif
+  password: password
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: game_events_test
+  pool: 5
+  username: alif
+  password: password
+  host: localhost
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: game_events_production
+  pool: 5
+  username: alif
+  password: password
+  host: localhost
