@@ -4,8 +4,9 @@ class CreateMeetings < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :venue
-      t.datetime :start
-      t.datetime :end
+      t.date :game_date
+      t.datetime :start_play_time
+      t.datetime :end_play_time
 
       t.timestamps
     end
