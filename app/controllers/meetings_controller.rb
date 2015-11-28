@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.all
+    @q = Meeting.ransack(params[:q])
+    @meetings = @q.result(distinct: true)
   end
 
   def new
