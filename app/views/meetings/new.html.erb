@@ -4,9 +4,9 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :venue %>
-    <%= f.input :game_date %>
-    <%= f.input :start_play_time %>
-    <%= f.input :end_play_time %>
+    <%= f.input :game_date, :as => :date_picker %>
+    <%= f.input :start_play_time, :as => :datetime_picker %>
+    <%= f.input :end_play_time, :as => :datetime_picker %>
     <br />
     <%= f.submit :Create, :class => 'btn btn-primary' %>
   <% end %>
