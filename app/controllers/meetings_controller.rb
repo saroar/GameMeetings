@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
       redirect_to @meeting, notice: 'Successfully create Meeting'
     else
       render action: 'new'
-   end
+    end
   end
 
   private
