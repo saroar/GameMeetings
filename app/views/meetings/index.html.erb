@@ -15,7 +15,7 @@
   <% @meetings.each do |meeting| %>
     <div class="col-md-4">
         <div class="booyah-box col-xs-10 col-xs-offset-1">
-          <h1><%= meeting.title %></h1>
+          <h1><%= link_to meeting.title, meeting_path(meeting)%></h1>
           <h2><%= meeting.description %></h2>
 
           <p><%= meeting.game_date %></p>

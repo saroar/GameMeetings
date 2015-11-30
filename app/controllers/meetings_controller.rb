@@ -8,9 +8,17 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
   end
 
+  def show
+    @meeting = Meeting.find(params[:id])
+  end
+
   def create
-    Meeting.create(meeting_params)
-    redirect_to root_path
+    @meeting = Meeting.create(meeting_params)
+    if @meeting.save
+     redirect_to @meeting, :notice => 'Successfully create Meeting'
+   else
+     render :action => 'new'
+   end
   end
 
   private
