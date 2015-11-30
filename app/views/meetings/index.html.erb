@@ -23,7 +23,12 @@
           <h1><%= meeting.venue.address %></h1>
           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=
           400x300&sensor=false&zoom=16&markers=#{meeting.venue.latitude}%2C#{meeting.venue.longitude}" %>
+          <h1>Your select games list :)</h1>
+          <% meeting.games.each do |mg|%>
+              <h3><%= link_to mg.title, game_path(mg) %></h3>
+          <% end %>
         </div>
       </div>
   <% end %>
+
 </div>

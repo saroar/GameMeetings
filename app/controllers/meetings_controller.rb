@@ -2,6 +2,7 @@ class MeetingsController < ApplicationController
   def index
     @q = Meeting.ransack(params[:q])
     @meetings = @q.result(distinct: true)
+    @games = Game.all
   end
 
   def new
