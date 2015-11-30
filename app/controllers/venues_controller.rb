@@ -18,6 +18,7 @@ class VenuesController < ApplicationController
     else
     render :action => 'new'
     end
+    
   end
 
   private

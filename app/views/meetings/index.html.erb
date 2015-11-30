@@ -17,14 +17,12 @@
         <div class="booyah-box col-xs-10 col-xs-offset-1">
           <h1><%= link_to meeting.title, meeting_path(meeting)%></h1>
           <h2><%= meeting.description %></h2>
-<<<<<<< HEAD
-
-=======
-          
->>>>>>> games
           <p><%= meeting.game_date %></p>
           <p><%= meeting.start_play_time %></p>
           <p><%= meeting.end_play_time %></p>
+          <h1><%= meeting.venue.address %></h1>
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=
+          400x300&sensor=false&zoom=16&markers=#{meeting.venue.latitude}%2C#{meeting.venue.longitude}" %>
         </div>
       </div>
   <% end %>

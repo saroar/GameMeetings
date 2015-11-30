@@ -1,3 +1,3 @@
 class Game < ActiveRecord::Base
-  belongs_to :meeting
+  has_and_belongs_to_many :meetings
 end

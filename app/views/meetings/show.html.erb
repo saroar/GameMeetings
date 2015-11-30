@@ -7,6 +7,12 @@
           <p><%= @meeting.game_date %></p>
           <p><%= @meeting.start_play_time %></p>
           <p><%= @meeting.end_play_time %></p>
+          <h1><%= @meeting.venue.address %></h1>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=
+400x300&sensor=false&zoom=16&markers=#{@meeting.venue.latitude}%2C#{@meeting.venue.longitude}" %>
+        <% @meeting.games.each do |mg|%>
+            <h3><%= mg.title %></h3>
+        <% end %>
         </div>
     </div>
 </div>

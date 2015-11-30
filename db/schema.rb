@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151129195540) do
-=======
-ActiveRecord::Schema.define(version: 20151130150328) do
->>>>>>> games
+ActiveRecord::Schema.define(version: 20151130181049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +23,23 @@ ActiveRecord::Schema.define(version: 20151130150328) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "games_meetings", force: :cascade do |t|
+    t.integer  "meeting_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "games_meetings", ["game_id"], name: "index_games_meetings_on_game_id", using: :btree
+  add_index "games_meetings", ["meeting_id"], name: "index_games_meetings_on_meeting_id", using: :btree
+
+  create_table "meeting_games", force: :cascade do |t|
+    t.integer  "meeting_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "meetings", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -35,7 +48,10 @@ ActiveRecord::Schema.define(version: 20151130150328) do
     t.datetime "end_play_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "venue_id"
   end
+
+  add_index "meetings", ["venue_id"], name: "index_meetings_on_venue_id", using: :btree
 
   create_table "venues", force: :cascade do |t|
     t.string   "address"
@@ -45,4 +61,7 @@ ActiveRecord::Schema.define(version: 20151130150328) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "games_meetings", "games"
+  add_foreign_key "games_meetings", "meetings"
+  add_foreign_key "meetings", "venues"
 end

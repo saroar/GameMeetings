@@ -31,6 +31,7 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails',
 
 gem "font-awesome-rails"
 gem 'geocoder'
+gem 'pry'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
