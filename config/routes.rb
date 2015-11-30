@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :meetings
   resources :venues
+  resources :games
+
 end
