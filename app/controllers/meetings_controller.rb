@@ -17,9 +17,9 @@ class MeetingsController < ApplicationController
     # binding.pry
     @meeting = Meeting.create(meeting_params)
     if @meeting.save
-     redirect_to @meeting, :notice => 'Successfully create Meeting'
-   else
-     render :action => 'new'
+      redirect_to @meeting, notice: 'Successfully create Meeting'
+    else
+      render action: 'new'
    end
   end
 
@@ -27,6 +27,6 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(:title, :description,
-    :venue_id, :game_date, :start_play_time, :end_play_time, :game_ids => [])
+                                    :venue_id, :game_date, :start_play_time, :end_play_time, game_ids: [])
   end
 end

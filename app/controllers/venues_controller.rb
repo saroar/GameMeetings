@@ -14,11 +14,10 @@ class VenuesController < ApplicationController
   def create
     @venue = Venue.create(venue_params)
     if @venue.save
-      redirect_to @venue, :notice => 'Successfully create venue'
+      redirect_to @venue, notice: 'Successfully create venue'
     else
-    render :action => 'new'
+      render action: 'new'
     end
-    
   end
 
   private

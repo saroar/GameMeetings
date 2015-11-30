@@ -7,13 +7,17 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def show
+    @game = Game.find(params[:id])
+  end
+
   def create
     @game = Game.create(game_params)
 
     if @game.save
-      redirect_to games_path, :notice => 'Successfully create venue'
+      redirect_to games_path, notice: 'Successfully create venue'
     else
-      render :action => 'new'
+      render action: 'new'
     end
   end
 
