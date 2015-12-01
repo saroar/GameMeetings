@@ -62,3 +62,7 @@ group :development do
   # Use faker with factory girl to generate fake data for testing
   gem 'faker'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+end
