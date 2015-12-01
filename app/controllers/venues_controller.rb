@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
   def index
     if params[:search].present?
-      @venues = Venue.near(params[:search], 50, {:order => :distance, :unit => :km})
+      @venues = Venue.near(params[:search], 50, { order: :distance, unit: :km })
     else
       @venues = Venue.all
     end

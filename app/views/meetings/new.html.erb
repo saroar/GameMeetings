@@ -3,13 +3,14 @@
   <%= simple_form_for @meeting do |f| %>
     <%= f.input :title %><br />
     <%= f.input :description %><br />
-    <%= f.input :game_date, :as => :date_picker %><br />
+    <%= f.input :game_date, :as => :date_picker,
+                input_html: {data: {date_options: { defaultDate: Time.zone.now }}} %><br />
     <%= f.input :start_play_time, :as => :time_picker %><br />
     <%= f.input :end_play_time, :as => :time_picker %><br />
     <br />
     <%= f.submit :Create, :class => 'btn btn-primary' %>
-    <%=  f.association :venue, :collection => @venues, :label_method => :address, :value_method => :id %>
-    <%= f.association :games,   as: :check_boxes %>
+    <%= f.association :venue, :collection => @venues, :label_method => :address, :value_method => :id %>
+    <%= f.association :games, as: :check_boxes %>
   <% end %>
     <br />
 </div>
