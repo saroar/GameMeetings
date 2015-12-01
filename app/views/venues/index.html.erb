@@ -3,7 +3,7 @@
   <% @venues.each do |venue| %>
     <div class="col-md-4">
         <div class="booyah-box col-xs-10 col-xs-offset-1">
-          <h1><%= venue.address %></h1>
+          <h1><%= link_to venue.address, venue_path(venue) %></h1>
           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=
           400x300&sensor=false&zoom=16&markers=#{venue.latitude}%2C#{venue.longitude}" %>
         </div>

@@ -1,6 +1,10 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    if params[:search].present?
+      @venues = Venue.near(params[:search], 50, {:order => :distance, :unit => :km})
+    else
+      @venues = Venue.all
+    end
   end
 
   def new

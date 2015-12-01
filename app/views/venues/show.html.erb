@@ -1,10 +1,16 @@
-<h1>Venue</h1>
+<h1 class="text-center">Venue</h1>
 <div class="row">
-    <div class="col-md-4">
-        <div class="booyah-box col-xs-10 col-xs-offset-1">
-          <h1><%= @venue.address %></h1>
-          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=
-          400x300&sensor=false&zoom=16&markers=#{@venue.latitude}%2C#{@venue.longitude}" %>
-        </div>
-      </div>
+  <div class="col-md-4">
+    <div class="booyah-box col-xs-10 col-xs-offset-1">
+      <h1><%= @venue.address %></h1>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=
+      400x300&sensor=false&zoom=16&markers=#{@venue.latitude}%2C#{@venue.longitude}" %>
+    </div>
+      <h3 class="text-center">Near Venues</h3>
+      <ul>
+        <% for venue in @venue.nearbys(10) %>
+          <li><%= link_to venue.address, venue %>(<%= venue.distance.round(2) %> kilometres)</li>
+        <% end %>
+      </ul>
+  </div>
 </div>
