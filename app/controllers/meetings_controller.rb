@@ -17,6 +17,7 @@ class MeetingsController < ApplicationController
   def create
     # binding.pry
     @meeting = Meeting.create(meeting_params)
+
     if @meeting.save
       redirect_to @meeting, notice: 'Successfully create Meeting'
     else
