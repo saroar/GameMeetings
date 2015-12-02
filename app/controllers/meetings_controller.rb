@@ -15,7 +15,6 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @meeting = Meeting.create(meeting_params)
 
     if @meeting.save

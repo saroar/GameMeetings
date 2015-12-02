@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Meeting, type: :model do
-  attributes = %w(title description game_date start_play_time end_play_time venue_id)
-  attributes.each do |a|
+  attribute = %w(title description game_date start_play_time end_play_time)
+  attribute.each do |a|
     it { is_expected.to have_attribute a }
     it { is_expected.to validate_presence_of a }
   end

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe MeetingsController, type: :controller do
-  describe 'Meeting #create' do
+  describe 'Meeting#create' do
     context 'with valid attributes' do
-      it 'create Meeting' do
+      it 'create the Meeting' do
         post :create, meeting: attributes_for(:meeting)
         expect(Meeting.count).to eq(1)
       end
@@ -16,12 +16,12 @@ RSpec.describe MeetingsController, type: :controller do
 
     context 'with invalid attributes' do
       it 'does not create meeting' do
-        post :create, meeting: attributes_for(:meeting, attributes: '')
+        post :create, meeting: attributes_for(:meeting, title: '')
         expect(Meeting.count).to eq(0)
       end
 
       it 're-renders the "SHOW" view' do
-        post :create, meeting: attributes_for(:meeting, attributes: '')
+        post :create, meeting: attributes_for(:meeting, title: '')
         expect(response).to render_template :new
       end
     end
