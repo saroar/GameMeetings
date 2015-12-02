@@ -1,10 +1,5 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1>Enter your Game Event details </h1>
-  <%= simple_form_for @game do |f| %>
-    <%= f.input :title %><br />
-    <%= f.input :description %><br />
-    <br />
-    <%= f.submit :Create, :class => 'btn btn-primary' %>
-  <% end %>
+    <%= render 'game_form'%>
     <br />
 </div>

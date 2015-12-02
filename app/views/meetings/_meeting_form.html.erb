@@ -1,0 +1,14 @@
+<%= simple_form_for @meeting do |f| %>
+  <%= f.input :title %><br />
+  <%= f.input :description %><br />
+  <%= f.input :game_date, :as => :date_picker,
+              input_html: {data: {date_options: { minDate: Time.zone.now }}} %><br />
+  <%= f.input :start_play_time, :as => :time_picker %><br />
+  <%= f.input :end_play_time, :as => :time_picker %><br />
+  <%= f.association :venue, :collection => Venue.limit(1), :label_method => :address,
+                    :value_method => :id , prompt: "Choose a Address", label: false %><br />
+  <%= f.association :games, as: :check_boxes %><br />
+  <br />
+  <%= f.submit :Create, :class => 'btn btn-primary' %>
+<% end %>
+<br />
