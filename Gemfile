@@ -48,6 +48,8 @@ group :development, :test do
   gem 'spring-commands-rspec'
   # Use Pry instead of IRB
   gem 'pry-rails'
+  # Use Factory Girl for factory support
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -56,13 +58,12 @@ group :development do
   # Use rubocop for linting
   gem 'rubocop', require: false
 
-  # Use Factory Girl for factory support
-  gem 'factory_girl_rails'
 
   # Use faker with factory girl to generate fake data for testing
   gem 'faker'
 end
 
 group :test do
+  gem 'capybara', '~> 2.5'
   gem 'shoulda-matchers'
 end

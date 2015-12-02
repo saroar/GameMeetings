@@ -15,7 +15,7 @@ class GamesController < ApplicationController
     @game = Game.create(game_params)
 
     if @game.save
-      redirect_to games_path, notice: 'Successfully create venue'
+      redirect_to @game, notice: 'Successfully create venue'
     else
       render action: 'new'
     end
