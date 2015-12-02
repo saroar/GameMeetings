@@ -28,9 +28,11 @@ As a People, I want to be able to chose.
 	game-date:string
 	start_play_time:datetime
 	end_play_time:datetime
+
 *** Games ***
 	title:string
 	description:text
+
 *** Venue ***
 	  t.string :address
 	  t.float :latitude
